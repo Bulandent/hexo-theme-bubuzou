@@ -13,24 +13,17 @@ from: https://bitsofco.de/the-background-properties/
 demo: ../../../demos/201703/background.html
 ```
 
-生成结果:
-
-```html
-<meta name="description" content="css的复合属性background，以及background-repeat,background-position,background-origin等子属性的介绍。">
-```
-
-如果没有配置该信息，Hexo-theme-bubuzou 会使用 `page.title` 和 `page.author` 来配置该标签。
-
 ## 标题
 
 实际上，Hexo-theme-bubuzou 只支持两种标题：`h2` 一级标题，`h3` 二级标题，也就是分别使用 `##` 和 `###` 来表示。之所以这么处理，是因为就个人感觉而言，我们不应该为文章设置过多的层级消耗读者的阅读精力。配置了这样的标题的页面会自动生成页面目录。
+
 ![页面目录](https://raw.githubusercontent.com/Bulandent/hexo-theme-bubuzou/master/source/images/cate.png)
 
 ## 文章摘要
 
 如果你想创建文章摘要用于向读者展示文章的核心内容，那么需要在文章摘要之后其他内容之前添加 HTML 注释标签 `<!--more-->`，使用方法如下图所示：
 
-![文章摘要](https://raw.githubusercontent.com/Bulandent/hexo-theme-bubuzou/master/source/images/cate.png)
+![文章摘要](https://raw.githubusercontent.com/Bulandent/hexo-theme-bubuzou/master/source/images/abstract.png)
 
 ## 评论插件
 

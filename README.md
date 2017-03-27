@@ -33,5 +33,5 @@ hexo-theme-bubuzou主题是根据hexo里Apollo主题改编而来的，[主题效
 
 ## 主题说明文档
 
-- [中文文档](https://github.com/bubuzou/hexo-theme-bubuzou/blob/master/doc/doc-zh.md)
+- [中文文档](https://github.com/Bulandent/hexo-theme-bubuzou/blob/master/doc/doc-zh.md)
 
