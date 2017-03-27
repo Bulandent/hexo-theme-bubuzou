@@ -1,4 +1,4 @@
-![hexo-theme-bubuzou](../images/readme.png)
+![hexo-theme-bubuzou](hexo-theme-bubuzou/source/images/readme.png)
 
 ## 文档
 
