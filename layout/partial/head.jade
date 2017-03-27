@@ -1,0 +1,18 @@
+meta(charset="utf-8")
+meta(name="X-UA-Compatible", content="IE=edge")
+meta(name="baidu-site-verification", content="i1Wty9d4fP")
+
+title 
+    block site_title
+        = config.title
+meta(name="viewport", content="width=device-width, initial-scale=1")
+block description
+    meta(name="description", content= config.description ? config.description : 'A Blog Powered By Hexo')
+meta(name="keywords", content= config.keywords)
+meta(name="author", content= config.author)
+link(rel="short icon", href=url_for(theme.favicon))
+link(rel="stylesheet", href=url_for("css/bubuzou.css"))
+
+- var xml = config.url + '/atom.xml'
+    link(rel="search", type="application/opensearchdescription+xml", href=xml, title=config.title)
+    

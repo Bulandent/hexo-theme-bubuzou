@@ -1,0 +1,90 @@
+mixin postInfo(item)
+    .post-info
+        != date(item.date, 'YYYY-MM-DD hh:mm')
+        if item.from && (is_home() || is_post())
+            a.post-from(href=item.from target="_blank" title=item.from) 原文地址
+        if item.demo && ( is_post() )
+            a.post-demo(href=item.demo target="_blank" title="") 去看示例
+// for archive page
+mixin postInfoAr(item)
+    .post-info
+        != date(item.date, 'MM-DD')
+        if item.from && (is_home() || is_post())
+            a.post-from(href=item.from target="_blank" title=item.from) 原文地址
+
+//- Index Page
+mixin posts()
+    ul.home.post-list
+        - page.posts.each(function (item) {
+            li.post-list-item
+                article.post-block
+                    h2.post-title
+                        a.post-title-link(href= url_for(item.path))
+                            != item.title
+                    +postInfo(item)
+                    .post-content
+                        != item.excerpt
+                    a.read-more(href= url_for(item.path))!= __('more')
+        - })
+
+//- Archive Page
+mixin postList()
+    .archive
+        - var year = 0;
+        - var change = false;
+        - page.posts.each(function (item) {
+            - var itemYear = date(item.date, 'YYYY') - 0;
+            - change = year !== itemYear;
+            - year = change ? itemYear : year;
+            if change 
+                h2.archive-year!= year
+            .post-item
+                +postInfoAr(item)
+                a.post-title-link(href= url_for(item.path))
+                    != item.title
+        - })
+
+//- Post Page
+mixin post(item)
+    #postAr.post
+        article.post-block
+            h1.post-title
+                != item.title
+            +postInfo(item)
+            .post-content
+                != item.content
+
+//- post category
+mixin postCate()
+    .archive
+        - var year = 0;
+        - var change = false;
+        - page.posts.each(function (item) {
+            - var itemYear = date(item.date, 'YYYY') - 0;
+            - change = year !== itemYear;
+            - year = change ? itemYear : year;
+            if change 
+                h2.archive-year!= year
+            .post-item
+                +postInfo(item)
+                a.post-title-link(href= url_for(item.path))
+                    != item.title
+        - })
+
+//- post live
+mixin postLive()
+    .archive
+        - var year = 0;
+        - var change = false;
+        - page.posts.each(function (item) {
+            if item.live
+                - var itemYear = date(item.date, 'YYYY') - 0;
+                - change = year !== itemYear;
+                - year = change ? itemYear : year;
+                if change 
+                    h2.archive-year!= year
+                .post-item
+                    +postInfo(item)
+                    a.post-title-link(href= url_for(item.path))
+                        != item.title
+        - })

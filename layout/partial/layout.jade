@@ -1,0 +1,36 @@
+doctype
+html(lang=config.language)
+    head
+        include head
+    body
+        header
+           .header.row 
+                a.logo-link(href=url_for())
+                    img(src=theme.logo)
+                include nav
+                .search
+                    a#search_btn(href='#search')
+        .row.scroll-con
+            section.container
+                block container
+                .right-container
+                    include ../widget/category
+                    include ../widget/tagcloud
+                    include ../widget/recent
+                    include ../widget/catalog
+        .right-menu
+        .modal.search-modal
+            .input-field
+                input(type='text', id='search_input')
+                label(for='search-input') 搜索
+            #search_result.search-result
+        .blog-overlay
+
+        footer.row
+            .footer-con
+                block pagination
+                block copyright
+                .totop
+                    i
+            
+        include scripts

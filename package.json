@@ -1,0 +1,30 @@
+{
+  "name": "hexo-theme-bubuzou",
+  "version": "1.0.0",
+  "description": "A hexo theme remoulded by hexo-theme-apollo",
+  "main": "index.js",
+  "scripts": {
+    "sass": "gulp sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bulandent/hexo-theme-bubuzou"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "apollo"
+  ],
+  "author": "brandon Sun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pinggod/hexo-theme-apollo/issues"
+  },
+  "homepage": "https://github.com/pinggod/hexo-theme-apollo#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.6.0"
+  }
+}
