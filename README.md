@@ -1,4 +1,4 @@
-![hexo-theme-bubuzou](hexo-theme-bubuzou/source/images/readme.png)
+![hexo-theme-bubuzou](https://raw.githubusercontent.com/Bulandent/hexo-theme-bubuzou/master/source/images/readme.png)
 
 ## 文档
 
