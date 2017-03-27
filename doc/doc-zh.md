@@ -1,42 +1,43 @@
-## Meta Description
+## 文章变量
 
-如果你想设置页面的 meta description 信息，请在每篇 markdown 文件的头部添加 `desc` 字段信息——更实用的方式是在 scaffolds 文件夹中，将 `desc` 配置到常用模板中去，示例如下：
+文章变量可以定义在md文件的开头。可以定义文章的标题，时间，归档的标签，归档的分类，文章描述，文章出处以及文章的示例等。
 
 ```md
-title: Lorem ipsum dolor
-date: 2015-12-31 14:49:13
-desc: Lorem ipsum dolor sit amet, consectetur.
----
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, non numquam saepe ex ut. Deleniti culpa inventore consectetur nam saepe!
+title: background属性
+date: 2017-3-10 11:19:04
+tags: css
+desc: css的复合属性background，以及background-repeat,background-position,background-origin等子属性的介绍。
+categories:
+  - css
+from: https://bitsofco.de/the-background-properties/
+demo: ../../../demos/201703/background.html
 ```
 
 生成结果:
 
 ```html
-<meta name="description" content="Lorem ipsum dolor sit amet, consectetur.">
+<meta name="description" content="css的复合属性background，以及background-repeat,background-position,background-origin等子属性的介绍。">
 ```
 
-如果没有配置该信息，Hexo-theme-apollo 会使用 `page.title` 和 `page.author` 来配置该标签。
+如果没有配置该信息，Hexo-theme-bubuzou 会使用 `page.title` 和 `page.author` 来配置该标签。
 
 ## 标题
 
-实际上，Hexo-theme-apollo 只支持两种标题：`h1~h3` 大标题，`h4~h6` 小标题，也就是说，`#` 和 `###` 的样式是一样的。之所以这么处理，是因为就个人感觉而言，我们不应该为文章设置过多的层级消耗读者的阅读精力。这相当于强制使用 Hexo-theme-apollo 的用户在写文章时注意文章结构，最多只能使用两层结构。
-
-另一个潜在的原因是因为我还没有发现好的样式来处理不同层级的标题，单纯以大小和颜色很容易让页面变得混乱和冗杂。如果你有好的建议，请告诉我:)!
+实际上，Hexo-theme-bubuzou 只支持两种标题：`h2` 一级标题，`h3` 二级标题，也就是分别使用 `##` 和 `###` 来表示。之所以这么处理，是因为就个人感觉而言，我们不应该为文章设置过多的层级消耗读者的阅读精力。配置了这样的标题的页面会自动生成页面目录。
+![页面目录](https://raw.githubusercontent.com/Bulandent/hexo-theme-bubuzou/master/source/images/cate.png)
 
 ## 文章摘要
 
 如果你想创建文章摘要用于向读者展示文章的核心内容，那么需要在文章摘要之后其他内容之前添加 HTML 注释标签 `<!--more-->`，使用方法如下图所示：
 
-![https://cloud.githubusercontent.com/assets/9530963/14064341/0fa3c754-f432-11e5-8ad7-5d063d4a0886.png](https://cloud.githubusercontent.com/assets/9530963/14064341/0fa3c754-f432-11e5-8ad7-5d063d4a0886.png)
+![文章摘要](https://raw.githubusercontent.com/Bulandent/hexo-theme-bubuzou/master/source/images/cate.png)
 
 ## 评论插件
 
-Hexo-theme-apollo 支持两种评论插件：Disqus 和 Duoshuo. 请在 `theme/_config.yml` 文件中做如下配置:
+Hexo-theme-bubuzou 支持两种评论插件：Disqus 和 Duoshuo. 请在 `theme/_config.yml` 文件中做如下配置:
 
 ```yaml
-disqus: seansun
+duoshuo: bubuzou
 ```
 
 ## 警告块
@@ -45,16 +46,18 @@ disqus: seansun
 
 ```html
 <div class="tip">
-    预处理器很强大，但它只是编写 CSS 的辅助工具。出于对扩展和维护等方面的考虑，在大型项目中有必要使用预处理器构建 CSS；但是对于小型项目，原生的 CSS 可能是一种更好的选择。不要肆意使用预处理器！
+    在ECMAScript 5的strict模式下，这种情况的`this`已经被规定不会指向全局对象了，而是`undefined`
 </div>
 ```
 
-![danger](https://cloud.githubusercontent.com/assets/9530963/11359678/489a510c-92b9-11e5-9256-341cef6999b6.png)
+![alert](https://raw.githubusercontent.com/Bulandent/hexo-theme-bubuzou/master/source/images/alert.png)
 
-## 图例
+## 搜索
 
-也许你已经在我的博客中看到了很多图例：流程图、草图……也许你想问它们是怎么生成的……实际上，它们是用 Microsoft Powerpoint 制作的，可能这个答案让你有点小失望，但是你还是应该尝试用它制作一下图例，你会发现它真的很适合！
-
-## Last but not Least
-
-专注文章内容的创作胜过博客样式的美观，祝各位玩的开心:) !
+使用搜索功能需要在站点的配置文件_config.yml里配置如下：
+```
+# search
+search:
+  path: search.xml
+  field: post
+```
