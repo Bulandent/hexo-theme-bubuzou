@@ -231,10 +231,11 @@ hr {
 
 code {
     margin: 0 2px;
-    padding: 3px 5px;
+    padding: 0px 5px;
     color: #e96900;
     border-radius: 2px;
-    white-space: inherit
+    white-space: inherit;
+    display: inline-block;
 }
 
 iframe,video {
@@ -1057,6 +1058,9 @@ footer .copyright a:hover {
     text-overflow: ellipsis;
     padding-left: 28px;
     display: block;
+}
+.arCatalog-list dd.on a {
+    color: #41b883;
 }
 .arCatalog-list .arCatalog-tack1 .arCatalog-index {
     color: #bbb;
