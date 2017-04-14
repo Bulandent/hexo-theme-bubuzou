@@ -54,3 +54,13 @@ search:
   path: search.xml
   field: post
 ```
+
+## 归档页面显示所有文章
+需要安装`hexo-generator-archive`插件支持，然后在全局的`_config.yml`里配置：
+```
+archive_generator:
+    per_page: 0
+    yearly: false
+    monthly: false
+    daily: false
+```
