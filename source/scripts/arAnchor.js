@@ -1,7 +1,7 @@
 /*
  * base on jQuery - arAnchor v1.0
  * Copyright(c) 2016 by brandon
- * Date: 2016-07-21
+ * Date: 2017-4-25 11:02:13
  */
 ;
 var arAnchor = (function() {
@@ -25,13 +25,13 @@ var arAnchor = (function() {
                 acIndex = '',
                 $dd = $('<dd><span class="arCatalog-index"></span><a></a><span class="arCatalog-dot"></span></dd>'),
                 hTagName = $arContentAnchor[ i ].parentElement.tagName;
-            if( hTagName === 'H2' ){
+            if( hTagName === 'H3' ){
+                 acIndex = '' + --h2Seq + '.' + h3Seq++ + '';
+                $dd.addClass( 'arCatalog-tack2' );
+            }else {
                 acIndex = h2Seq;
                 h3Seq = 1;
                 $dd.addClass( 'arCatalog-tack1' );
-            }else if ( hTagName === 'H3' ) {
-                acIndex = '' + --h2Seq + '.' + h3Seq++ + '';
-                $dd.addClass( 'arCatalog-tack2' );
             }
             h2Seq++;
             $dd.find('.arCatalog-index').text( acIndex );
@@ -63,7 +63,7 @@ var arAnchor = (function() {
         function isHighlight(){
             $arContentAnchor.each(function(i){
                 var $this = $(this);
-                if($this.offset().top - 80 <= sHeight()){
+                if($this.offset().top - 82 <= sHeight()){
                     $arCatalog.find('dd').removeClass('on');
                     $arCatalog.find('dd').eq(i).addClass('on');
                 }
