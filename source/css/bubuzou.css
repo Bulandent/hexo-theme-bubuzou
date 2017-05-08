@@ -721,7 +721,6 @@ pre .coffeescript .javascript,pre .javascript .xml,pre .tex .formula,pre .xml .j
 .ds-thread,#disqus_thread {
     margin-bottom: 2em
 }
-
 section.container {
     margin: 0 10px;
     max-width: 700px;
@@ -974,6 +973,7 @@ footer .copyright a:hover {
 }
 .tagcloud a {
     padding-right: 4px;
+    white-space: nowrap;
 }
 .recent .post-list li {
     line-height: 28px;
@@ -1287,11 +1287,8 @@ footer .copyright a:hover {
         margin: 10px 0;
         color: #ddd;
     }
-    .archive .post-title-link {
-        margin-left: 70px;
-    }
     .archive .post-info {
-        width: 60px;
+        width: 54px;
         overflow: hidden;
         height: 24px;
     }
