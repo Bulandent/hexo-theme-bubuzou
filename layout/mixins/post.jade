@@ -5,6 +5,14 @@ mixin postInfo(item)
             a.post-from(href=item.from target="_blank" title=item.from) 原文地址
         if item.demo && ( is_home() || is_post() )
             a.post-demo(href=item.demo target="_blank" title="") 去看示例
+// for archive page
+mixin postInfoAr(item)
+    .post-info
+        != date(item.date, 'MM-DD')
+        if item.from && (is_home() || is_post())
+            a.post-from(href=item.from target="_blank" title=item.from) 原文地址
+        if item.demo && ( is_home() || is_post() )
+            a.post-demo(href=item.demo target="_blank" title="") 去看示例
 //- Index Page
 mixin posts()
     ul.home.post-list
@@ -32,7 +40,7 @@ mixin postList()
             if change 
                 h2.archive-year!= year
             .post-item
-                +postInfo(item)
+                +postInfoAr(item)
                 a.post-title-link(href= url_for(item.path))
                     != item.title
         - })
