@@ -18,8 +18,10 @@ logo: /images/logo.png
 
 # Comment
 # e.g disqus: seansun
+yungentie: bubuzou
 disqus:
-duoshuo: bubuzou
+duoshuo: 
+
 
 # Analytics
 # google-analytics:
