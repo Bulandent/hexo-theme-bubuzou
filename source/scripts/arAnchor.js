@@ -1,7 +1,7 @@
 /*
  * base on jQuery - arAnchor v1.0
- * Copyright(c) 2016 by brandon
- * Date: 2017-4-25 11:02:13
+ * Copyright(c) 2016 by typeR
+ * Date: 2017-5-27 16:10:41
  */
 ;
 var arAnchor = (function() {
@@ -43,12 +43,59 @@ var arAnchor = (function() {
 
         var lineHeight = $arContentAnchor.length > 8 ? 234 : ( $arContentAnchor.length * 28 + 10 );
         $arCatalog.find('.arCatalog-line').css('height', lineHeight );
-
+        $arCatalog.find('dd').eq(0).addClass('on');
         $arCatalog.appendTo($( '#arAnchorBar' )[ 0 ]);
+
+        var catalogLength = $arContentAnchor.length,
+            $firstCatalog = $arCatalog.find('dd'),
+            catalogHeight = $firstCatalog[0].offsetHeight || 0;
+            viewRange = [];
+
+        // the viewRange of the catalogBox
+        var rangeTop = $firstCatalog.offset().top - sHeight(),
+        rangeBottom = rangeTop + 8 * catalogHeight - catalogHeight / 2 ;
+        viewRange.push( rangeTop );
+        viewRange.push( rangeBottom );
 
         $(window).scroll(function(){
             isHighlight();
+            scrollCatalog();
         });
+
+        // auto scroll catalogBox for active catalog in the view
+        function scrollCatalog() {
+            var $currentCatalog = $arCatalog.find('dd.on'),
+                currentIndex = $currentCatalog.index(),
+                currentRange = $currentCatalog.offset().top - sHeight(),
+                $catalogList = $arCatalog.find('.arCatalog-list'),
+                scrollTopPx = $catalogList[0].scrollTop,
+                scrollTopCount = parseInt (scrollTopPx / 28);
+                                 
+            if ( currentRange > viewRange[1] ) {
+                var nextCount = catalogLength - currentIndex;
+                if ( nextCount >=8 ) {
+                    $catalogList.animate({ 
+                        scrollTop: catalogHeight * ( scrollTopCount + 8 ) 
+                    }, 300, 'swing');
+                } else if ( nextCount < 8 ) {
+                    $catalogList.animate({ 
+                        scrollTop: catalogHeight * ( scrollTopCount + nextCount )
+                    }, 300, 'swing');
+                }
+            } else if ( currentRange < viewRange[0] ) {
+                var prevCount = currentIndex;
+                if ( prevCount >=8 ) {
+                    $catalogList.animate({ 
+                        scrollTop: catalogHeight * ( scrollTopCount - 8 ) 
+                    }, 300, 'swing');
+                } else if ( prevCount < 8 ) {
+                    $catalogList.animate({ 
+                        scrollTop: 0
+                    }, 300, 'swing');
+                }
+            }
+            
+        }
 
         //bind event for arCatalogtacks
         $arCatalog.find('a').each(function(i){

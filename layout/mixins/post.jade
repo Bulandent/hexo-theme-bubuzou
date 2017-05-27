@@ -1,6 +1,6 @@
 mixin postInfo(item)
     .post-info
-        != date(item.date, 'YYYY-MM-DD hh:mm')
+        != date(item.date, 'YYYY-MM-DD HH:mm')
         if item.from && (is_home() || is_post())
             a.post-from(href=item.from target="_blank" title=item.from) 原文地址
         if item.demo && ( is_home() || is_post() )

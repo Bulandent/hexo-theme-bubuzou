@@ -1,12 +1,13 @@
 ## 文章变量
 
-文章变量可以定义在md文件的开头。可以定义文章的标题，时间，归档的标签，归档的分类，文章描述，文章出处以及文章的示例等。
+文章变量可以定义在md文件的开头。可以定义文章的标题，时间，归档的标签，归档的分类，文章关键字，文章描述，文章出处以及文章的示例等。
 
 ```md
 title: background属性
 date: 2017-3-10 11:19:04
 tags: css
 desc: css的复合属性background，以及background-repeat,background-position,background-origin等子属性的介绍。
+keywords: css background、background-repeat、background-position、background-origin
 categories:
   - css
 from: https://bitsofco.de/the-background-properties/
