@@ -65,3 +65,19 @@ archive_generator:
     monthly: false
     daily: false
 ```
+
+## 访问次数统计
+引入js脚本：
+```
+<script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js"></script>
+<script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js"></script>
+```
+显示当前页面的访问量：
+```
+<span data-hk-page="current"> - </span>
+```
+显示指定页面的访问量：
+<span data-hk-page="http://bubuzou.com/2016/11/closure/"> - </span>
+注意这里的链接必须是带协议的完整链接，而且不能带中文的。
+更多用法可以参考[这里](http://jerryzou.com/posts/introduction-to-hit-kounter-lc/)
+

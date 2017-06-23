@@ -1,6 +1,12 @@
 mixin postInfo(item)
     .post-info
-        != date(item.date, 'YYYY-MM-DD HH:mm')
+        != date(item.date, 'YYYY-MM-DD')
+        p.visit
+            if (is_home())
+                i(data-hk-page='http://bubuzou.com'+url_for(item.path)) -
+            else 
+                i(data-hk-page="current") -
+            span 次访问
         if item.from && (is_home() || is_post())
             a.post-from(href=item.from target="_blank" title=item.from) 原文地址
         if item.demo && ( is_home() || is_post() )

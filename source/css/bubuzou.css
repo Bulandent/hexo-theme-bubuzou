@@ -218,7 +218,7 @@ ul {
     margin: 1rem 0
 }
 .post-content ul {
-    padding-left: 40px;
+    padding-left: 20px;
 }
 a,a:active {
     color: #2c3e50;
@@ -412,11 +412,24 @@ header .nav-list-item .active {
     margin-left: 0.5rem
 }
 .post-block .post-info a {
-    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     padding: 3px 6px;
     border-radius: 5px;
     font-size: 12px;
     color: white;
+}
+.post-block .post-info .visit {
+    display: inline-block;
+    margin: 0;
+    padding: 0 10px;
+}
+.post-block .post-info .visit i {
+    font-style: normal;
+}
+.post-block .post-info .visit span {
+    font-size: 12px;
+    padding-left: 2px;
+    margin: 0;
 }
 .post-block .post-info .post-from {
     background-color: #E36B6B;
@@ -741,7 +754,7 @@ footer .copyright p {
     font-weight: 100;
 }
 footer .copyright a {
-   color: #888;
+   color: #aaa;
 }
 footer .copyright a:hover {
     color: #666;
@@ -1297,6 +1310,9 @@ footer .copyright a:hover {
     }
     .paginator .prev, .paginator .next {
         margin: 15px 4px;
+    }
+    .highlight .code pre {
+        padding: 0.6em 0.7em;
     }
     footer div.copyright {
         padding: 10px 0;
