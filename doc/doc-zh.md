@@ -28,10 +28,10 @@ demo: ../../../demos/201703/background.html
 
 ## 评论插件
 
-Hexo-theme-bubuzou 支持两种评论插件：Disqus 和 Duoshuo. 请在 `theme/_config.yml` 文件中做如下配置:
+Hexo-theme-bubuzou 评论插件由最开始的多说改成网易云跟帖，后面由于8月1号云跟帖暂停服务，所以现在又换成了畅言。请在 `theme/_config.yml` 文件中做如下配置:
 
 ```yaml
-duoshuo: bubuzou
+changyan: bubuzou
 ```
 
 ## 警告块
