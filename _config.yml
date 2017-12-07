@@ -17,10 +17,17 @@ favicon: /images/favicon.ico
 logo: /images/logo.png
 
 # Comment
-changyan: bubuzou
+changyan: 
 yungentie: 
 disqus:
 duoshuo: 
+valine: 
+    enable: false # if you want use valine, please set this value is true
+    appId:  # your leancloud appid
+    appKey:  # your leancloud appkey
+    placeholder: just go go
+    avatar: mm 
+    pageSize: 10
 
 
 # Analytics
