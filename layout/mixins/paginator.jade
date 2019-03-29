@@ -3,15 +3,15 @@ mixin home()
     - var next = page.next_link
     .paginator
         if page.prev
-            a.prev(href=url_for(prev))!= __('prev') 
+            a.prev(href=url_for(prev), title=page.prev.title)!= __('prev') 
         if page.next
-            a.next(href=url_for(next))!= __('next')
+            a.next(href=url_for(next), title=page.next.title)!= __('next')
 
 mixin post()
     - var prev = page.prev ? page.prev.path : false;
     - var next = page.next ? page.next.path : false; 
     .paginator
         if prev
-            a.prev(href=url_for(prev))!= __('prev_post')
+            a.prev(href=url_for(prev), title=page.prev.title)!= __('prev_post')
         if next
-            a.next(href=url_for(next))!= __('next_post')
+            a.next(href=url_for(next), title=page.next.title)!= __('next_post')

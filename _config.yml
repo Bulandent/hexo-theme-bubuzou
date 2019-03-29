@@ -1,9 +1,9 @@
 menu:
     博文: /
     归档: /archives/
-    生活: /categories/live/
-    摄影: /categories/film/
-    关于: /about/
+    # 生活: /categories/live/
+    # 摄影: /categories/film/
+    # 关于: /about/
 
 widgets:
 - category
@@ -17,10 +17,12 @@ favicon: /images/favicon.ico
 logo: /images/logo.png
 
 # Comment
-changyan: bubuzou
-yungentie: 
-disqus:
-duoshuo: 
+#changyan: bubuzou
+leancloud:
+    appid: aD8jJBpu4oew3ovNY73z6Rdq-gzGzoHsz # 填写您的appid
+    appkey: FdzS5SOPHdhYQoEUngQ8K2QW # 填写您的appkey
+    comment: true # 是否开启评论系统
+    timer: true # 是否开启文章统计
 
 
 # Analytics

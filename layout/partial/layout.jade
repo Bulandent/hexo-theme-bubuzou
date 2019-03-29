@@ -10,14 +10,20 @@ html(lang=config.language)
                 include nav
                 .search
                     a#search_btn(href='#search')
+                .nav-btn#nav_btn
+                    span
+                    span
+                    span
         .row.scroll-con
             section.container
                 block container
                 .right-container
-                    include ../widget/category
-                    include ../widget/tagcloud
-                    include ../widget/recent
-                    include ../widget/catalog
+                    if (is_post())
+                        include ../widget/catalog
+                    else 
+                        include ../widget/category
+                        include ../widget/tagcloud
+                        include ../widget/recent
         .right-menu
         .modal.search-modal
             .input-field
@@ -34,3 +40,5 @@ html(lang=config.language)
                     i
             
         include scripts
+        if theme.leancloud.timer
+            include timer

@@ -31,10 +31,15 @@
     // 文章目录
     arAnchor();
 
+    // phone端，右侧导航
+    // $('.right-menu').on('click', function() {
+    //     $('body').addClass('right-on');
+    // });
 
     // phone端，右侧导航
-    $('.right-menu').on('click', function() {
-        $('body').addClass('right-on');
+    $('#nav_btn').on('click', function(e) {
+        e.preventDefault();
+        $('#nav_list').slideToggle(300);
     });
 
 	$('#search_btn').on('click', function(e) {

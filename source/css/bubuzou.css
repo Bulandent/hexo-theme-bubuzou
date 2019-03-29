@@ -25,7 +25,7 @@ body { margin: 0; }
 .row {
     position: relative;
     width: 100%;
-    max-width: 980px;
+    max-width: 1080px;
     margin: 0 auto;
 }
 
@@ -235,6 +235,8 @@ ul.nav,ul.post-list {
 
 ul {  margin: 1rem 0; }
 
+ul li + li { margin-top: 4px; }
+
 .post-content ul { padding-left: 20px; }
 
 .post-content ol { padding-left: 15px; }
@@ -300,8 +302,12 @@ header .nav {
     float: right;
     left: 80px;
     height: 25px;
-    padding-top: 18px;
+    padding-top: 15px;
     padding-right: 50px;
+}
+
+header .nav-btn {
+    display: none;
 }
 
 header .logo-link img { padding-top: 4px; }
@@ -476,7 +482,7 @@ header .nav-list-item .active { opacity: 0.7; }
     border-left: 4px solid #f66;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
-    background-color: #f8f8f8;
+    background-color: #f6f8fa;
 }
 
 .post-content .tip:before {
@@ -500,17 +506,12 @@ header .nav-list-item .active { opacity: 0.7; }
     margin: 0;
     padding: 8px 10px 8px 15px;
     border-left: 6px solid #42b983;
-    background-color: #f8f8f8;
+    background-color: #f6f8fa;
 }
 
 .post-content blockquote p { margin: 0; }
 
 .post-content img { max-width: 100%; }
-
-.post-content > table,
-.post-content > figure.highlight {
-    box-shadow: 0 1px 2px rgba(0,0,0,0.125);
-}
 
 .post-content .tip br { display: none; }
 
@@ -530,7 +531,7 @@ code,
 pre {
     font-family: "Source Code Pro", Monaco, Menlo, Consolas, monospace;
     font-size: 0.9333em;
-    background-color: #f8f8f8;
+    background-color: #f6f8fa;
 }
 
 .highlight {
@@ -539,7 +540,7 @@ pre {
     overflow-x: auto;
     border-radius: 2px;
     line-height: 1.1em;
-    background-color: #f8f8f8;
+    background-color: #f6f8fa;
 }
 
 .highlight table,
@@ -724,8 +725,7 @@ pre .xml .cdata { opacity: 0.5; }
 #disqus_thread { margin-bottom: 2em; }
 
 section.container {
-    max-width: 700px;
-    margin: 0 10px;
+    max-width: 780px;
     padding-top: 70px;
 }
 
@@ -757,7 +757,7 @@ footer .copyright a:hover { color: #666; }
     z-index: 999;
     bottom: 145px;
     display: none;
-    margin-left: 740px;
+    margin-left: 800px;
     cursor: pointer;
 }
 
@@ -794,7 +794,7 @@ footer .copyright a:hover { color: #666; }
     font-family: "Source Code Pro", Monaco, Menlo, Consolas, monospace;
     line-height: 28px;
     border-radius: 20px;
-    background: #f8f8f8;
+    background: #f6f8fa;
     transition: color  0.1s, background-color 0.1s;
 }
 
@@ -1016,7 +1016,6 @@ footer .copyright a:hover { color: #666; }
     left: 5px;
     top: -5px;
     width: 0;
-    max-height: 290px;
     border: 1px solid #eaeaea;
     border-top: 0;
     border-bottom: 0;
@@ -1048,7 +1047,6 @@ footer .copyright a:hover { color: #666; }
 }
 
 .arCatalog .arCatalog-list {
-    max-height: 224px;
     margin-left: -2px;
     padding-left: 27px;
     overflow-x: hidden;
@@ -1182,31 +1180,71 @@ footer .copyright a:hover { color: #666; }
 
 @media screen and (max-width: 640px) {
 
-    .header { padding: 0; }
+    .header { 
+        padding: 0;
+        height: 50px;
+    }
 
-    header .logo-link { padding-left: 10px; }
+    header .logo-link { 
+        padding-left: 10px;
+        height: 50px;
+    }
+
+    header .logo-link img {
+        width: 40px;
+    }
+
+    header .nav-btn {
+        display: block;
+        position: absolute;
+        right: 10px;
+        top: 16px;
+    }
+
+    header .nav-btn span {
+        display: block;
+        width: 22px;
+        height: 3px;
+        background-color: #fff;
+    }
+
+    header .nav-btn span + span {
+        margin-top: 5px;
+    }
 
     .home.post-list { margin: 0; }
 
-    .search { right: 10px; }
+    .search { 
+        right: 45px;
+        top: 10px;
+    }
+
+    .search a {
+        background-size: 24px;
+    }
 
     header .nav {
+        display: none;
         position: absolute;
-        top: 60px;
+        top: 50px;
         left: 0;
         width: 100%;
+        height: auto;
         padding: 10px 0;    
         border-bottom: 1px solid #ddd;
         background-color: #fff;
     }
 
     header .nav-list-item {
-        width: 20%;
         padding: 0;
-        text-align: center;
+        text-align: left;
+        display: block;
     }
 
-    header .nav-list-item a { color: #41b883; }
+    header .nav-list-item a { 
+        color: #41b883;
+        padding: 3px 20px;
+    }
 
     .footer-con {
         width: 100%;
@@ -1242,7 +1280,7 @@ footer .copyright a:hover { color: #666; }
 
     .input-field input { padding-top: 5px; }
 
-    .scroll-con { padding-top: 106px; }
+    .scroll-con { padding-top: 50px; }
 
     .scroll-con .container {
         margin: 0;
@@ -1290,11 +1328,11 @@ footer .copyright a:hover { color: #666; }
     .widget { margin: 0; }
 
     .right-menu {
+        display: none;
         position: fixed;
         top: 50%;
         right: 8px;
         z-index: 999;
-        display: block;
         width: 15px;
         height: 32px;
         margin-top: 37px;

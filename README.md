@@ -1,6 +1,12 @@
 ![hexo-theme-bubuzou](https://raw.githubusercontent.com/Bulandent/hexo-theme-bubuzou/master/source/images/readme.png)
 
 ## 更新日志
+### 2019-03-29
+- 文章页的右侧去掉“分类归档”、“标签云”和“最新文章”，右侧整块为文章目录
+- 文章评论系统和访问统计改成基于 `leancloud` 的 `valine` 
+- 手机端头部菜单精简
+- 手机端去掉右侧导航栏
+
 ### 2017-07-21
 - bubuzou.css 规范化了`css`文件
 

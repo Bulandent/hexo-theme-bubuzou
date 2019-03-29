@@ -10,7 +10,6 @@ var arAnchor = (function() {
     }
     return function() {
         var $arContent = $('.post-content'),
-        $articleBox = $('.article-box'),
         $arContentAnchor = $arContent.find('.headerlink');
     
         //create an anchorbar
@@ -40,12 +39,13 @@ var arAnchor = (function() {
             
             $dd.appendTo( $arCatalog.find('dl')[ 0 ] );
         });
-
-        var lineHeight = $arContentAnchor.length > 8 ? 234 : ( $arContentAnchor.length * 28 + 10 );
+        var maxCatalogCount = parseInt((cHeight() - 180)/28); // 屏幕内能容纳的最大目录个数
+        var lineHeight = $arContentAnchor.length > maxCatalogCount ? (maxCatalogCount * 28 + 10) : ( $arContentAnchor.length * 28 + 10 );
         $arCatalog.find('.arCatalog-line').css('height', lineHeight );
+        $arCatalog.find('.arCatalog-list').css('maxHeight', lineHeight - 10);
         $arCatalog.find('dd').eq(0).addClass('on');
         $arCatalog.appendTo($( '#arAnchorBar' )[ 0 ]);
-
+        
         var catalogLength = $arContentAnchor.length,
             $firstCatalog = $arCatalog.find('dd'),
             catalogHeight = $firstCatalog[0].offsetHeight || 0;
