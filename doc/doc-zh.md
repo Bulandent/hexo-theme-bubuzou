@@ -45,7 +45,7 @@ leancloud:
     timer: true # 是否开启文章统计
 
 ```
-初次之外，还需要在[LeanCloud](https://leancloud.cn/dashboard/applist.html#/apps)安全中心配置你的web安全域名。否则会报403错误。
+除此之外，还需要在[LeanCloud](https://leancloud.cn/dashboard/applist.html#/apps)安全中心配置你的web安全域名。否则会报403错误。
 
 
 ## 警告块
