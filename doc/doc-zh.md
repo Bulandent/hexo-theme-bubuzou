@@ -98,5 +98,5 @@ archive_generator:
 
 **对于访问统计，最需要注意的是需要到 [LeanCloud](https://leancloud.cn/dashboard/applist.html#/apps) 的存储去创建一个名为`Timer`的class用来保存访问数据。其实评论也需要，只是里面有一个默认的Comment，所以不需要单独再创建。**
 
-作为一个刚了解hexo的外行，摸索了一天，终于搞定。感谢坐着提供的主题 。
+作为一个刚了解hexo的外行，摸索了一天，终于搞定。感谢作者提供的主题 。
 
