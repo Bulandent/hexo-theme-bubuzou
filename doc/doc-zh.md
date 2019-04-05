@@ -34,6 +34,20 @@ Hexo-theme-bubuzou 评论插件由最开始的多说改成网易云跟帖，后�
 changyan: bubuzou
 ```
 
+**需要到[LeanCloud](https://leancloud.cn/dashboard/applist.html#/apps)去申请appId跟appKey，完整配置如下：**
+```yaml
+# Comment
+changyan: bubuzou
+leancloud:
+    appid: 申请到的appid # 填写您的appid
+    appkey:申请到的appkey # 填写您的appkey
+    comment: true # 是否开启评论系统
+    timer: true # 是否开启文章统计
+
+```
+初次之外，还需要在[LeanCloud](https://leancloud.cn/dashboard/applist.html#/apps)安全中心配置你的web安全域名。否则会报403错误。
+
+
 ## 警告块
 
 使用警告块需要 `div` 标签和 `tip` 类名：
@@ -80,4 +94,9 @@ archive_generator:
 <span data-hk-page="http://bubuzou.com/2016/11/closure/"> - </span>
 注意这里的链接必须是带协议的完整链接，而且不能带中文的。
 更多用法可以参考[这里](http://jerryzou.com/posts/introduction-to-hit-kounter-lc/)
+
+
+对于访问统计，最需要注意的是需要到 [LeanCloud](https://leancloud.cn/dashboard/applist.html#/apps) 的存储去创建一个名为`Timer`的class用来保存访问数据。其实评论也需要，只是里面有一个默认的Comment，所以不需要单独再创建。
+
+作为一个刚了解hexo的外行，摸索了一天，终于搞定。感谢坐着提供的主题 。
 
