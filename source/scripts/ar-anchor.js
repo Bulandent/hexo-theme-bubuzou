@@ -18,7 +18,9 @@ var arAnchor = (function() {
                            '<div class="arCatalog-list"><dl></dl></div>');
         
         var h2Seq = 1,
-            h3Seq = 1;
+			h3Seq = 1,
+			currScrollHeight = -1,
+			hasScrollToBottom = false;  // 已经滚动到底部
         $arContentAnchor.each(function(i){
             var $this = $(this),
                 acIndex = '',
@@ -58,43 +60,31 @@ var arAnchor = (function() {
         viewRange.push( rangeBottom );
 
         $(window).scroll(function(){
-            isHighlight();
-            scrollCatalog();
+			var tempScrollHeight = sHeight()
+			isHighlight();
+			if (!hasScrollToBottom && tempScrollHeight > currScrollHeight || tempScrollHeight < currScrollHeight) {  // 向下滚动，如果目录已经滚动到最底部，则不进行滚动
+				currScrollHeight = tempScrollHeight
+				scrollCatalog();
+			}
         });
 
         // auto scroll catalogBox for active catalog in the view
         function scrollCatalog() {
             var $currentCatalog = $arCatalog.find('dd.on'),
-                currentIndex = $currentCatalog.index(),
-                currentRange = $currentCatalog.offset().top - sHeight(),
-                $catalogList = $arCatalog.find('.arCatalog-list'),
-                scrollTopPx = $catalogList[0].scrollTop,
-                scrollTopCount = parseInt (scrollTopPx / 28);
-                                 
-            if ( currentRange > viewRange[1] ) {
-                var nextCount = catalogLength - currentIndex;
-                if ( nextCount >=8 ) {
-                    $catalogList.animate({ 
-                        scrollTop: catalogHeight * ( scrollTopCount + 8 ) 
-                    }, 300, 'swing');
-                } else if ( nextCount < 8 ) {
-                    $catalogList.animate({ 
-                        scrollTop: catalogHeight * ( scrollTopCount + nextCount )
-                    }, 300, 'swing');
-                }
-            } else if ( currentRange < viewRange[0] ) {
-                var prevCount = currentIndex;
-                if ( prevCount >=8 ) {
-                    $catalogList.animate({ 
-                        scrollTop: catalogHeight * ( scrollTopCount - 8 ) 
-                    }, 300, 'swing');
-                } else if ( prevCount < 8 ) {
-                    $catalogList.animate({ 
-                        scrollTop: 0
-                    }, 300, 'swing');
-                }
-            }
-            
+				$catalogList = $arCatalog.find('.arCatalog-list'),
+				$catalogDl = $catalogList.find('dl');
+
+			var curr = $currentCatalog[0].getBoundingClientRect(),
+				list = $catalogDl[0].getBoundingClientRect(),
+				body = $catalogList[0].getBoundingClientRect();
+			
+			if (curr.bottom + 4 * 28 >= body.bottom ) {
+				$catalogDl.css('marginTop', Math.min(0,   body.bottom - list.bottom))
+				hasScrollToBottom = true
+			} else {
+				$catalogDl.css('marginTop', 0)
+				hasScrollToBottom = false
+			}
         }
 
         //bind event for arCatalogtacks
@@ -108,13 +98,25 @@ var arAnchor = (function() {
 
         //highlight an arCatalogtack
         function isHighlight(){
-            $arContentAnchor.each(function(i){
-                var $this = $(this);
-                if($this.offset().top - 82 <= sHeight()){
-                    $arCatalog.find('dd').removeClass('on');
-                    $arCatalog.find('dd').eq(i).addClass('on');
-                }
-            });
+			let {
+				scrollTop,
+				scrollHeight,
+				clientHeight
+			} = document.scrollingElement;
+				
+			// 当前滚动高度 + 视口高度 >= 文档总高度
+			if (scrollTop + clientHeight >= scrollHeight) {
+				$arCatalog.find('dd').removeClass('on');
+                $arCatalog.find('dd').eq($firstCatalog.length - 1).addClass('on')
+			} else {
+				$arContentAnchor.each(function(i){
+					var $this = $(this);
+					if($this.offset().top - 82 <= sHeight()){
+						$arCatalog.find('dd').removeClass('on');
+						$arCatalog.find('dd').eq(i).addClass('on');
+					}
+				});
+			}
         }
 
         //get browser's viewHeight

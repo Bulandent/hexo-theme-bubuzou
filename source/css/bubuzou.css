@@ -222,7 +222,7 @@ body {
     margin: 0;
     font-family: sourcesanspro, "Helvetica Neue", Arial, sans-serif;
     font-size: 15px;
-    line-height: 1.6;
+    line-height: 1.7;
     background-color: #fff;
     color: #333;
 }
@@ -270,15 +270,14 @@ table {
     margin: 1em auto;
 }
 
-table thead { background-color: #ddd; }
+table thead { background-color: #f6f8fa; }
 
 table thead th {
     min-width: 80px;
     padding: 5px;
-    text-align: left;
 }
 
-table tbody tr:nth-child(2n) { background-color: #eee; }
+table tbody tr:nth-child(2n) { background-color: #f6f8fa; }
 
 table tbody td {
     padding: 5px;
@@ -1049,10 +1048,13 @@ footer .copyright a:hover { color: #666; }
 .arCatalog .arCatalog-list {
     margin-left: -2px;
     padding-left: 27px;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
-.arCatalog .arCatalog-list dl { margin: 0; }
+.arCatalog .arCatalog-list dl { 
+	margin: 0; 
+	transition: 0.3s all;
+}
 
 .arCatalog-list::-webkit-scrollbar { display: none; }
 
@@ -1378,11 +1380,9 @@ footer .copyright a:hover { color: #666; }
 }
 
 @media screen and (max-width: 400px) {
-
     .search-modal .search-result { max-height: 450px; }
 }
 
 @media screen and (max-width: 350px) {
-
     .search-modal .search-result { max-height: 370px; }
 }
