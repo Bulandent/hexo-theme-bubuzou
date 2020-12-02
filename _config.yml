@@ -1,9 +1,9 @@
 menu:
     博文: /
     归档: /archives/
-    # 生活: /categories/live/
-    # 摄影: /categories/film/
-    # 关于: /about/
+    生活: /categories/live/
+    读书: /categories/read/
+    关于: /about/
 
 widgets:
 - category
@@ -13,8 +13,9 @@ widgets:
 
 # count
 show_count: true
-favicon: /images/favicon.ico
-logo: /images/logo.png
+favicon: https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/favicon.ico
+logo: https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/logo.png
+style: https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/bubuzou.css
 
 # Comment
 #changyan: bubuzou

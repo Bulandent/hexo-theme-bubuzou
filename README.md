@@ -1,25 +1,37 @@
 ![hexo-theme-bubuzou](https://raw.githubusercontent.com/Bulandent/hexo-theme-bubuzou/master/source/images/readme.png)
 
 ## 更新日志
-### 2020-08-13 
+
+### 2020-11-06
+
+- 加载优化
+- 文章页目录插件重写
+
+### 2020-08-13
+
 - 文章页目录栏bug修复
 
 ### 2019-03-29
+
 - 文章页的右侧去掉“分类归档”、“标签云”和“最新文章”，右侧整块为文章目录
 - 文章评论系统和访问统计改成基于 `leancloud` 的 `valine` 
 - 手机端头部菜单精简
 - 手机端去掉右侧导航栏
 
 ### 2017-07-21
+
 - bubuzou.css 规范化了`css`文件
 
 ### 2017-07-12
+
 - 评论系统由网易云跟帖改成了畅言
 
 ### 2017-06-25
+
 - 增加了文章访问次数的统计功能
 
 ### 2017-06-07
+
 - 文章目录优化，能够自适应定位
 
 ## 说明
@@ -27,15 +39,18 @@
 hexo-theme-bubuzou主题是根据hexo里Apollo主题改编而来的，[主题效果](http://bubuzou.com/)
 
 ## 安装
+
 想要把hexo的主题应用到自己的博客上，需要在本地先构建好hexo所依赖的环境。[hexo使用文档](https://hexo.io/zh-cn/docs/index.html)
 大致的步骤是这样的：
+
 - 安装git
 - 安装node.js
 - 安装hexo
 
-``` 
+```
 $ npm install -g hexo-cli
 ```
+
 - 构建站点
 
 ```
@@ -60,4 +75,3 @@ hexo里每个不同的主题所依赖的包都不尽相同。安装的默认主�
 ## 主题说明文档
 
 - [中文文档](https://github.com/bulandent/hexo-theme-bubuzou/blob/master/doc/doc-zh.md)
-

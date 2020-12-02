@@ -29,7 +29,7 @@
 	});
 
     // 文章目录
-    arAnchor();
+    articleCatalog();
 
     // phone端，右侧导航
     // $('.right-menu').on('click', function() {

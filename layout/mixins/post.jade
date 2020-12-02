@@ -5,12 +5,6 @@ mixin postInfo(item)
             p.visit
                 i(class="article-timer", data-identity=item.path)
                 span 次访问
-
-            //- if (is_home())
-            //-     i(data-hk-page='http://bubuzou.com'+url_for(item.path)) -
-            //- else 
-            //-     i(data-hk-page="current") -
-            //- span 次访问
         if item.from && (is_home() || is_post())
             a.post-from(href=item.from target="_blank" title=item.from) 原文地址
         if item.demo && ( is_home() || is_post() )

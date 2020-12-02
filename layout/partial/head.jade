@@ -12,7 +12,7 @@ block description
 meta(name="keywords", content= page.keywords ? page.keywords : config.keywords)
 meta(name="author", content= config.author)
 link(rel="short icon", href=url_for(theme.favicon))
-link(rel="stylesheet", href=url_for("css/bubuzou.css"))
+link(rel="stylesheet", href=url_for(theme.style))
 
 - var xml = config.url + '/atom.xml'
     link(rel="search", type="application/opensearchdescription+xml", href=xml, title=config.title)

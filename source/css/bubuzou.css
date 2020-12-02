@@ -2,14 +2,15 @@
 
 /**
   * @name: bubuzou.css
-  * @description: hexo-theme-bubuzou的主题样式
+  * @description: hexo-theme-bubuzou的主题样式2
   * @author: typeR(zgrlbq@126.com)
   * @update: 2017-7-21 16:21:02
   */
 
 @font-face {
     font-family: sourcesanspro;
-    src: url(../font/sourcesanspro.woff2) format("woff2"), url(../font/sourcesanspro.woff) format("woff");
+	src: url(https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/sourcesanspro.woff2) format("woff2"), 
+		 url(https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/sourcesanspro.woff) format("woff");
     font-weight: 400;
     font-style: normal;
 }
@@ -528,7 +529,8 @@ header .nav-list-item .active { opacity: 0.7; }
 
 code,
 pre {
-    font-family: "Source Code Pro", Monaco, Menlo, Consolas, monospace;
+	/* font-family: "Source Code Pro", Monaco, Menlo, Consolas, monospace; */
+	font-family: Menlo, Monaco, Consolas, Courier New, monospace;
     font-size: 0.9333em;
     background-color: #f6f8fa;
 }
@@ -556,7 +558,8 @@ pre {
 .highlight .code pre {
     margin: 0;
     padding: 1.2em 1.4em;
-    font-family: "Source Code Pro", Monaco, Menlo, Consolas, monospace;
+	/* font-family: "Source Code Pro", Monaco, Menlo, Consolas, monospace; */
+	font-family: Menlo, Monaco, Consolas, Courier New, monospace;
     font-size: 14px;
     line-height: 1.5em;
 }
@@ -757,26 +760,56 @@ footer .copyright a:hover { color: #666; }
     bottom: 145px;
     display: none;
     margin-left: 800px;
-    cursor: pointer;
+	cursor: pointer;
+	width: 18px;
+	height: 18px;
+	padding: 5px;
+    border-radius: 4px;
+	transition: all 0.1s;
 }
 
 .totop i {
+	display: block;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-width: 9px;
+    border-bottom: 9px solid #41b883;
+    position: absolute;
+    top: 8px;
+	left: 5px;
+	transition: all 0.1s;
+}
+.totop::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #41b883;
+	display: block;
+	transition: all 0.1s;
+}
+.totop::after {
+    content: "";
     display: block;
-    width: 34px;
-    height: 34px;
-    background: url(../images/totop.png) no-repeat top center;
-    background-size: 34px 68px;
+    width: 6px;
+    height: 6px;
+    background-color: #41b883;
+    position: absolute;
+    left: 11px;
+	top: 17px;
+	transition: all 0.1s;
 }
 
-.totop:hover i { background-position: bottom center; }
-
-.right-container {
-    position: fixed;
-    z-index: 10;
-    width: 230px;
-    top: 90px;
-    left: 50%;
-    margin-left: 310px;
+.totop:hover {
+	background-color: #41b883;
+}
+.totop:hover::before {
+	background-color: #fff;
+}
+.totop:hover i {
+	border-bottom-color: #fff;
+}
+.totop:hover::after {
+	background-color: #fff;
 }
 
 .tags {
@@ -812,7 +845,7 @@ footer .copyright a:hover { color: #666; }
     display: block;
     width: 30px;
     height: 30px;
-    background: url(../images/search_white.png) no-repeat center center;
+    background: url(https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/search_white.png) no-repeat center center;
     background-size: 20px;
 }
 
@@ -1005,6 +1038,15 @@ footer .copyright a:hover { color: #666; }
 
 /* 文章目录 */
 
+.right-container {
+    position: fixed;
+    z-index: 10;
+    width: 230px;
+    top: 90px;
+    left: 50%;
+    margin-left: 310px;
+}
+
 .arCatalog {
     position: relative;
     margin: 20px 0 0 0;
@@ -1012,7 +1054,7 @@ footer .copyright a:hover { color: #666; }
 
 .arCatalog .arCatalog-line {
     position: absolute;
-    left: 5px;
+    left: 7px;
     top: -5px;
     width: 0;
     border: 1px solid #eaeaea;
@@ -1045,27 +1087,27 @@ footer .copyright a:hover { color: #666; }
     border-radius: 10px;
 }
 
-.arCatalog .arCatalog-list {
+.arCatalog .arCatalog-body {
     margin-left: -2px;
     padding-left: 27px;
     overflow: hidden;
 }
 
-.arCatalog .arCatalog-list dl { 
+.arCatalog .arCatalog-body dl { 
 	margin: 0; 
 	transition: 0.3s all;
 }
 
-.arCatalog-list::-webkit-scrollbar { display: none; }
+.arCatalog-body::-webkit-scrollbar { display: none; }
 
-.arCatalog .arCatalog-list dd {
+.arCatalog .arCatalog-body dd {
     position: relative;
     margin: 0;
     font-size: 15px;
     line-height: 28px;
 }
 
-.arCatalog-list .arCatalog-tack1 a {
+.arCatalog-body .arCatalog-tack1 a {
     display: block;
     max-width: 170px;
     padding-left: 28px;
@@ -1074,36 +1116,41 @@ footer .copyright a:hover { color: #666; }
     text-overflow: ellipsis;
 }
 
-.arCatalog-list dd.on a { color: #41b883; }
+.arCatalog-body dd.on a { color: #41b883; }
 
-.arCatalog-list .arCatalog-tack1 .arCatalog-index {
+.arCatalog-body .arCatalog-tack1 .arCatalog-index {
     position: absolute;
     left: 2px;
     top: 0;
     color: #bbb;
 }
 
-.arCatalog-list .arCatalog-tack1 .arCatalog-dot {
-    position: absolute;
+.arCatalog-body .arCatalog-tack1 .arCatalog-dot {
+	position: absolute;
     left: -22px;
     top: 11px;
-    width: 7px;
+    width: 8px;
     height: 8px;
-    background: url(../images/icon_dot.jpg) no-repeat left center #fff;
+    background-color: #eaeaea;
+    border: 1px solid #fff;
+    border-radius: 2em;
 }
 
-.arCatalog-list dd.on .arCatalog-dot {
-    position: absolute;
-    left: -27px;
-    top: 6px;
-    width: 16px;
-    height: 16px;
-    background: url(../images/icon_doton.jpg) no-repeat left center;
+.arCatalog-body dd.on .arCatalog-dot {
+	position: absolute;
+    left: -23px;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    background-color: #40b985;
+    box-shadow: 0px 0px 2px 2px rgba(64,185,133,0.5);
+    border-radius: 2em;
+    border-width: 0;
 }
 
-.arCatalog-list .arCatalog-tack2 { padding-left: 17px; }
+.arCatalog-body .arCatalog-tack2 { padding-left: 17px; }
 
-.arCatalog-list .arCatalog-tack2 a {
+.arCatalog-body .arCatalog-tack2 a {
     display: block;
     padding-left: 48px;
     max-width: 150px;
@@ -1112,7 +1159,7 @@ footer .copyright a:hover { color: #666; }
     white-space: nowrap;
 }
 
-.arCatalog-list .arCatalog-tack2 .arCatalog-index {
+.arCatalog-body .arCatalog-tack2 .arCatalog-index {
     position: absolute;
     left: 27px;
     top: 0;
@@ -1338,7 +1385,7 @@ footer .copyright a:hover { color: #666; }
         width: 15px;
         height: 32px;
         margin-top: 37px;
-        background: url(../images/right-menu.png) no-repeat center center;
+        background: url(https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/right-menu.png) no-repeat center center;
     }
 
     .archive { padding: 1px 0 20px; }
