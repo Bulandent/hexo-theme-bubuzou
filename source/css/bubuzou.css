@@ -222,7 +222,7 @@ body {
 body {
     margin: 0;
     font-family: sourcesanspro, "Helvetica Neue", Arial, sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.7;
     background-color: #fff;
     color: #333;
@@ -407,11 +407,11 @@ header .nav-list-item .active { opacity: 0.7; }
 .post-block .post-title {
     display: block;
     margin: 0.65em 0;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 .post .post-block .post-title {
-    font-size: 20px;
+    font-size: 22px;
     color: #41b883;
 }
 
@@ -423,7 +423,7 @@ header .nav-list-item .active { opacity: 0.7; }
     margin: 1.2em 0;
     font-family: Georgia, serif;
     font-size: 16px;
-    color: #7f8c8d;
+    color: #999;
 }
 
 .post-block .post-info span { margin-left: 0.5rem; }
@@ -464,9 +464,9 @@ header .nav-list-item .active { opacity: 0.7; }
     color: #4e4a4a;
 }
 
-.post-content h2 { font-size: 18px; }
+.post-content h2 { font-size: 20px; }
 
-.post-content h3 { font-size: 17px; }
+.post-content h3 { font-size: 18px; }
 
 .post-content h4 { font-size: 16px; }
 
