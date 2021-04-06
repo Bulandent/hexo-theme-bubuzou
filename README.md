@@ -1,4 +1,4 @@
-![hexo-theme-bubuzou](https://raw.githubusercontent.com/Bulandent/hexo-theme-bubuzou/master/source/images/readme.png)
+![hexo-theme-bubuzou](https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/theme-bubuzou.png)
 
 ## 更新日志
 
