@@ -119,13 +119,16 @@ let articleCatalog = (function() {
 			
 			for (let currNode of arContentAnchor) {
 				tagName = currNode.parentElement.tagName
-				if ( tagName === 'H3') {
-					acIndex = `${h2Index}.${h3Index++}`
-					className = 'arCatalog-tack2'
-				} else {
+				if ( tagName === 'H2') {
 					acIndex = ++h2Index
 					h3Index = 1
 					className = 'arCatalog-tack1'
+				} else if (tagName === 'H3') {
+					acIndex = `${h2Index}.${h3Index++}`
+					className = 'arCatalog-tack2'
+				} else {
+					acIndex = ''
+					className = 'arCatalog-tack3'
 				}
 				retStr += `
 						<dd class="${className} ${index++ === lastOnIndex ? 'on' : ''}">
