@@ -79,3 +79,7 @@ hexo里每个不同的主题所依赖的包都不尽相同。安装的默认主�
 ## 主题说明文档
 
 - [中文文档](https://github.com/bulandent/hexo-theme-bubuzou/blob/master/doc/doc-zh.md)
+
+## 协议
+
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
