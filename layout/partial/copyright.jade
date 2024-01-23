@@ -5,5 +5,10 @@
     - var year = currentDate.getFullYear();
     - year = year == theme.startyear ? year : theme.startyear + ' - ' + year;
     p © #{year} #[a(href=config.weibo, target="_blank")!= config.author], powered by #[a(href=hexoURL, target="_blank") Hexo] <br> and #[a(href=bubuzouURL, target="_blank") hexo-theme-bubuzou]
+    p
+        span(id="busuanzi_container_site_pv") 本站总访问数：
+            span(id="busuanzi_value_site_pv")
+        span(id="busuanzi_container_site_uv", style="padding-left: 6px;") 访客数：
+            span(id="busuanzi_value_site_uv")
     p 
         span(style="padding-right: 6px;") 闽ICP备16007301号-2

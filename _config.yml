@@ -1,15 +1,15 @@
 menu:
-    博文: /
-    归档: /archives/
-    生活: /categories/live/
-    读书: /categories/read/
-    关于: /about/
+  博文: /
+  归档: /archives/
+  生活: /categories/live/
+  读书: /categories/read/
+  关于: /about/
 
 widgets:
-- category
-- tag
-- tagcloud
-- archive
+  - category
+  - tag
+  - tagcloud
+  - archive
 
 # count
 show_count: true
@@ -20,11 +20,10 @@ style: https://bubuzou.oss-cn-shenzhen.aliyuncs.com/blog/202010/bubuzou.css
 # Comment
 #changyan: bubuzou
 leancloud:
-    appid: aD8jJBpu4oew3ovNY73z6Rdq-gzGzoHsz # 填写您的appid
-    appkey: FdzS5SOPHdhYQoEUngQ8K2QW # 填写您的appkey
-    comment: true # 是否开启评论系统
-    timer: true # 是否开启文章统计
-
+  appid: aD8jJBpu4oew3ovNY73z6Rdq-gzGzoHsz # 填写您的appid
+  appkey: FdzS5SOPHdhYQoEUngQ8K2QW # 填写您的appkey
+  comment: true # 是否开启评论系统
+  timer: false # 是否开启文章统计
 
 # Analytics
 # google-analytics:
@@ -32,4 +31,3 @@ ga: UA-65933410-1
 
 # Copyright Infomation
 startyear: 2016
-
